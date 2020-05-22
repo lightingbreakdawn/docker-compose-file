@@ -15,7 +15,7 @@ services:
     volumes:
       - ${WWWROOT}:/data/wwwroot
     ports:
-      - 8081:8081
+      - 9000:9000
     networks:
       - lightingbreakdawn-net
 
