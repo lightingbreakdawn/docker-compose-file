@@ -7,6 +7,7 @@ services:
       context: ./php
       args: 
       - TIMEZONE=${TIMEZONE}
+      - CHANGE_SOURCE=${CHANGE_SOURCE}
       - PHP_VERSION=${PHP_VERSION}
     image: lightingbreakdawn-php
     container_name: lightingbreakdawn-php
