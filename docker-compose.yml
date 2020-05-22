@@ -1,0 +1,24 @@
+version: '3'
+
+services:
+### PHP-FPM ### 
+  php:
+    build:
+      context: ./php
+      args: 
+      - TIMEZONE=${TIMEZONE}
+      - PHP_VERSION=${PHP_VERSION}
+    image: lightingbreakdawn-php
+    container_name: lightingbreakdawn-php
+    restart: always
+    volumes:
+      - ${WWWROOT}:/data/wwwroot
+    ports:
+      - 8081:8081
+    networks:
+      - lightingbreakdawn-net
+
+
+networks:
+  lightingbreakdawn-net:
+    driver: bridge
